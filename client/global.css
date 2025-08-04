@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 45 100% 98%;
+    --foreground: 25 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 30% 92%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 45 30% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    --accent: 35 85% 65%;
+    --accent-foreground: 25 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 20% 85%;
+    --input: 45 20% 85%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 45 100% 98%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 45 30% 92%;
+    --sidebar-accent-foreground: 25 30% 15%;
+    --sidebar-border: 45 20% 85%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 45 100% 98%;
+
+    --card: 25 30% 12%;
+    --card-foreground: 45 100% 98%;
+
+    --popover: 25 30% 12%;
+    --popover-foreground: 45 100% 98%;
+
+    --primary: 35 85% 65%;
+    --primary-foreground: 25 30% 8%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 45 100% 98%;
+
+    --muted: 25 20% 20%;
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 25 85% 60%;
+    --accent-foreground: 25 30% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 35 85% 65%;
+    --sidebar-background: 25 30% 8%;
+    --sidebar-foreground: 45 100% 95%;
+    --sidebar-primary: 35 85% 65%;
+    --sidebar-primary-foreground: 25 30% 8%;
+    --sidebar-accent: 25 20% 20%;
+    --sidebar-accent-foreground: 45 100% 95%;
+    --sidebar-border: 25 20% 25%;
+    --sidebar-ring: 35 85% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@layer components {
+  .pottery-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  }
+
+  .pottery-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .pottery-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Hero Section Styles */
+  .hero-bg {
+    background: linear-gradient(135deg, hsl(43 100% 96%), hsl(35 80% 92%), hsl(15 75% 90%));
+    position: relative;
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, hsl(45 95% 70% / 0.1), hsl(15 65% 55% / 0.1));
+    opacity: 0.4;
+  }
+
+  /* Pattern Overlays */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(15 65% 55% / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(45 95% 70% / 0.06) 0%, transparent 50%);
+  }
+
+  /* Floating Elements */
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-delayed {
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    background: linear-gradient(135deg, hsl(15 65% 55%), hsl(25 75% 65%));
+    box-shadow: 0 10px 30px -5px hsl(15 65% 55% / 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-hero:hover {
+    box-shadow: 0 0 40px hsl(25 75% 65% / 0.4);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-outline-hero {
+    border: 2px solid hsl(15 65% 55%);
+    color: hsl(15 65% 55%);
+    background: hsl(43 100% 98% / 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-hero:hover {
+    background: hsl(15 65% 55% / 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px -2px hsl(15 65% 55% / 0.15);
+  }
+
+  /* Typography Enhancements */
+  .hero-title {
+    background: linear-gradient(135deg, hsl(20 14% 20%), hsl(15 65% 55%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px hsl(15 65% 55% / 0.1);
+  }
+
+  /* Badge Styling */
+  .hero-badge {
+    background: hsl(43 100% 98% / 0.95);
+    border: 1px solid hsl(35 25% 88%);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px -2px hsl(15 65% 55% / 0.15);
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+
+  /* Animation Classes */
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-float-delayed { animation: float 8s ease-in-out infinite reverse; }
+  .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+}
