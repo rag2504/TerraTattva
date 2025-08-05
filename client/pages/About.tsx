@@ -97,7 +97,7 @@ export default function About() {
                 className="rounded-2xl shadow-2xl w-full h-96 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-6 rounded-xl shadow-lg">
-                <div className="text-3xl font-bold mb-1">25+</div>
+                <div className="text-3xl font-bold mb-1">100+</div>
                 <div className="text-sm opacity-90">Years of Tradition</div>
               </div>
             </div>
