@@ -198,10 +198,6 @@ export default function Index() {
           <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-orange-300/30 rounded-full floating-element opacity-40 animate-[fadeInScale_2s_ease-out_1.5s_both]"></div>
           <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-red-300/20 to-orange-400/20 rounded-full floating-delayed opacity-35 animate-[fadeInScale_2s_ease-out_2s_both]"></div>
 
-          {/* Small accent dots */}
-          <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-orange-500 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_2.5s_both]"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_3s_both]"></div>
-          <div className="absolute top-2/3 left-1/6 w-4 h-4 bg-orange-400 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_3.5s_both]"></div>
 
           {/* Decorative lines */}
           <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent animate-[slideInLeft_2s_ease-out_2s_both]"></div>
@@ -263,6 +259,22 @@ export default function Index() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20 animate-[fadeInUp_1s_ease-out_1.2s_both]">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex
+                  ? "bg-orange-500 scale-125"
+                  : "bg-white/50 hover:bg-white/70"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
 
         {/* Bottom gradient overlay */}
