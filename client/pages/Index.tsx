@@ -237,22 +237,22 @@ export default function Index() {
             </div>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-6 sm:mb-8 lg:mb-10 max-w-4xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
               <Heart className="inline w-5 h-5 sm:w-6 sm:h-6 mr-3 text-orange-600" />
               Every purchase supports a local artisan and preserves ancient traditions
               <Star className="inline w-5 h-5 sm:w-6 sm:h-6 ml-3 text-red-500" />
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 animate-[fadeInUp_1s_ease-out_1s_both]">
-              <Link to="/products" className="w-full sm:w-auto max-w-sm sm:max-w-none">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 mb-16 sm:mb-20">
+              <Link to="/products" className="w-full sm:w-auto max-w-sm sm:max-w-none animate-[slideInLeft_1.2s_ease-out_1s_both]">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group">
                   Explore Collection
                   <ArrowRight className="ml-3 h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link to="/about" className="w-full sm:w-auto max-w-sm sm:max-w-none">
-                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link to="/about" className="w-full sm:w-auto max-w-sm sm:max-w-none animate-[slideInRight_1.2s_ease-out_1.2s_both]">
+                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   Our Story
                 </Button>
               </Link>
