@@ -193,21 +193,21 @@ export default function Index() {
         {/* Enhanced Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large floating elements */}
-          <div className="absolute top-12 left-8 w-24 h-24 bg-gradient-to-br from-orange-300/20 to-red-300/20 rounded-full floating-element opacity-60 blur-sm"></div>
-          <div className="absolute bottom-16 right-12 w-32 h-32 bg-gradient-to-br from-red-300/25 to-orange-300/25 rounded-full floating-delayed opacity-50 blur-sm"></div>
-          
+          <div className="absolute top-12 left-8 w-24 h-24 bg-gradient-to-br from-orange-300/20 to-red-300/20 rounded-full floating-element opacity-60 blur-sm animate-[fadeInScale_2s_ease-out_0.5s_both]"></div>
+          <div className="absolute bottom-16 right-12 w-32 h-32 bg-gradient-to-br from-red-300/25 to-orange-300/25 rounded-full floating-delayed opacity-50 blur-sm animate-[fadeInScale_2s_ease-out_1s_both]"></div>
+
           {/* Medium floating elements */}
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-orange-300/30 rounded-full floating-element opacity-40"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-red-300/20 to-orange-400/20 rounded-full floating-delayed opacity-35"></div>
-          
+          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-orange-300/30 rounded-full floating-element opacity-40 animate-[fadeInScale_2s_ease-out_1.5s_both]"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-red-300/20 to-orange-400/20 rounded-full floating-delayed opacity-35 animate-[fadeInScale_2s_ease-out_2s_both]"></div>
+
           {/* Small accent dots */}
-          <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-orange-500 rounded-full animate-pulse-glow"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-pulse-glow"></div>
-          <div className="absolute top-2/3 left-1/6 w-4 h-4 bg-orange-400 rounded-full animate-pulse-glow"></div>
-          
+          <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-orange-500 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_2.5s_both]"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_3s_both]"></div>
+          <div className="absolute top-2/3 left-1/6 w-4 h-4 bg-orange-400 rounded-full animate-pulse-glow animate-[fadeInScale_1s_ease-out_3.5s_both]"></div>
+
           {/* Decorative lines */}
-          <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
-          <div className="absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-red-500/30 to-transparent"></div>
+          <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent animate-[slideInLeft_2s_ease-out_2s_both]"></div>
+          <div className="absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-red-500/30 to-transparent animate-[slideInRight_2s_ease-out_2.5s_both]"></div>
         </div>
 
         {/* Main Content */}
