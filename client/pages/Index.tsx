@@ -214,9 +214,9 @@ export default function Index() {
         <div className="relative z-10 w-full max-w-6xl mx-auto">
           <div className="text-center">
             {/* Animated Badge */}
-            <div className="mb-6 sm:mb-8 lg:mb-10 flex justify-center animate-[fadeInUp_1s_ease-out_0.2s_both]">
-              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <div className="mt-8 sm:mt-12 lg:mt-16 mb-6 sm:mb-8 flex justify-center animate-[fadeInUp_1s_ease-out_0.2s_both]">
+              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Handcrafted with Love
               </Badge>
             </div>
@@ -227,20 +227,20 @@ export default function Index() {
             </h1>
 
             {/* Subtitle */}
-            <div className="mb-6 sm:mb-8 lg:mb-10 space-y-3 sm:space-y-4 px-2 animate-[fadeInUp_1s_ease-out_0.6s_both]">
-              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-700 font-medium max-w-5xl mx-auto leading-relaxed">
+            <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-3 px-2 animate-[fadeInUp_1s_ease-out_0.6s_both]">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
                 Home décor with a desi touch –
               </p>
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-orange-600 font-bold max-w-5xl mx-auto leading-relaxed">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-orange-600 font-bold max-w-4xl mx-auto leading-relaxed">
                 मिट्टी, मेहनत और mindful living
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-6 sm:mb-8 lg:mb-10 max-w-4xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-              <Heart className="inline w-5 h-5 sm:w-6 sm:h-6 mr-3 text-orange-600" />
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
+              <Heart className="inline w-4 h-4 sm:w-5 sm:h-5 mr-2 text-orange-600" />
               Every purchase supports a local artisan and preserves ancient traditions
-              <Star className="inline w-5 h-5 sm:w-6 sm:h-6 ml-3 text-red-500" />
+              <Star className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2 text-red-500" />
             </p>
 
             {/* CTA Buttons */}
