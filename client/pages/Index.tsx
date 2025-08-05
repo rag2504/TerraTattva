@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import { Heart, ArrowRight, Users, Trophy, Award, Sparkles, Star, ShoppingCart, CheckCircle } from "lucide-react";
+import { Heart, ArrowRight, Leaf, Truck, Award, Sparkles, Star, ShoppingCart, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
@@ -229,31 +229,31 @@ export default function Index() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-lg text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-orange-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
               </div>
-              <div className="text-4xl font-bold text-gray-800 mb-3">50+</div>
-              <div className="text-gray-600 font-semibold text-lg">Local Artists Supported</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2 sm:mb-3">100%</div>
+              <div className="text-gray-600 font-semibold text-base sm:text-lg leading-tight">Hand Crafted</div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-lg text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Trophy className="h-8 w-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
               </div>
-              <div className="text-4xl font-bold text-gray-800 mb-3">1000+</div>
-              <div className="text-gray-600 font-semibold text-lg">Happy Customers</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2 sm:mb-3">100%</div>
+              <div className="text-gray-600 font-semibold text-base sm:text-lg leading-tight">Eco-Friendly</div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-lg text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="h-8 w-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg text-center transform hover:scale-105 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
               </div>
-              <div className="text-4xl font-bold text-gray-800 mb-3">100%</div>
-              <div className="text-gray-600 font-semibold text-lg">Handcrafted</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-3">FREE</div>
+              <div className="text-gray-600 font-semibold text-base sm:text-lg leading-tight">Delivery Pan India</div>
             </div>
           </div>
         </div>
@@ -290,7 +290,7 @@ export default function Index() {
                 className="rounded-2xl shadow-2xl w-full h-96 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-4 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold">25+</div>
+                <div className="text-2xl font-bold">1000+</div>
                 <div className="text-sm opacity-90">Years of Tradition</div>
               </div>
             </div>
