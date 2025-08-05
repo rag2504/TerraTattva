@@ -95,7 +95,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
   .line-clamp-1 {
@@ -129,30 +131,47 @@
 
   /* Hero Section Styles */
   .hero-bg {
-    background: linear-gradient(135deg, hsl(43 100% 96%), hsl(35 80% 92%), hsl(15 75% 90%));
+    background: linear-gradient(
+      135deg,
+      hsl(43 100% 96%),
+      hsl(35 80% 92%),
+      hsl(15 75% 90%)
+    );
     position: relative;
   }
-  
+
   .hero-bg::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, hsl(45 95% 70% / 0.1), hsl(15 65% 55% / 0.1));
+    background: linear-gradient(
+      45deg,
+      hsl(45 95% 70% / 0.1),
+      hsl(15 65% 55% / 0.1)
+    );
     opacity: 0.4;
   }
 
   /* Pattern Overlays */
   .hero-pattern {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(15 65% 55% / 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(45 95% 70% / 0.06) 0%, transparent 50%);
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        hsl(15 65% 55% / 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        hsl(45 95% 70% / 0.06) 0%,
+        transparent 50%
+      );
   }
 
   /* Floating Elements */
   .floating-element {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .floating-delayed {
     animation: float 8s ease-in-out infinite reverse;
   }
@@ -163,7 +182,7 @@
     box-shadow: 0 10px 30px -5px hsl(15 65% 55% / 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .btn-hero:hover {
     box-shadow: 0 0 40px hsl(25 75% 65% / 0.4);
     transform: translateY(-2px) scale(1.02);
@@ -176,7 +195,7 @@
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
   }
-  
+
   .btn-outline-hero:hover {
     background: hsl(15 65% 55% / 0.1);
     transform: translateY(-1px);
@@ -204,19 +223,37 @@
 @layer utilities {
   /* Custom Animations */
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(5px) rotate(-1deg);
+    }
   }
 
   @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 
   @keyframes pulse-glow {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
   }
 
   @keyframes fadeInUp {
@@ -264,8 +301,16 @@
   }
 
   /* Animation Classes */
-  .animate-float { animation: float 6s ease-in-out infinite; }
-  .animate-float-delayed { animation: float 8s ease-in-out infinite reverse; }
-  .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
-  .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float 8s ease-in-out infinite reverse;
+  }
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
 }

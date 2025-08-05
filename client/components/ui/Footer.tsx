@@ -8,16 +8,16 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="https://i.postimg.cc/PrrCJSKJ/Whats-App-Image-2025-08-04-at-15-57-48-a9d55488.jpg" 
-                alt="TerraTattva Logo" 
+              <img
+                src="https://i.postimg.cc/PrrCJSKJ/Whats-App-Image-2025-08-04-at-15-57-48-a9d55488.jpg"
+                alt="TerraTattva Logo"
                 className="w-12 h-12 object-cover rounded-lg shadow-lg"
               />
               <span className="text-2xl font-bold">TerraTattva</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Home décor with a desi touch – मिट्टी, मेहनत और mindful living. 
-              Empowering artisans, preserving traditions, and bringing authentic 
+              Home décor with a desi touch – मिट्टी, मेहनत और mindful living.
+              Empowering artisans, preserving traditions, and bringing authentic
               handcrafted pottery to homes around the world.
             </p>
             <div>
@@ -33,18 +33,46 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/products" className="text-gray-400 hover:text-white transition-colors">Our Collection</a></li>
-              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">Our Artisans</a></li>
-              <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/products"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Our Collection
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Our Artisans
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-lg mb-6">Contact Us</h4>
@@ -64,10 +92,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; 2024 TerraTattva. All rights reserved. Made with ❤️ for artisans worldwide.
+            &copy; 2024 TerraTattva. All rights reserved. Made with ❤️ for
+            artisans worldwide.
           </p>
         </div>
       </div>
