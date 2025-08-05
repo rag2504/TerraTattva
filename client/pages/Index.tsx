@@ -258,12 +258,6 @@ export default function Index() {
               </Link>
             </div>
 
-            {/* Additional Accent Elements */}
-            <div className="mt-16 flex justify-center space-x-8 opacity-60">
-              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-            </div>
           </div>
         </div>
 
