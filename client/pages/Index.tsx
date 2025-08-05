@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +7,13 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import { Heart, ArrowRight, Leaf, Truck, Award, Sparkles, Star, ShoppingCart, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+
+// Hero carousel images
+const heroImages = [
+  heroImage,
+  "https://images.pexels.com/photos/6243345/pexels-photo-6243345.jpeg", // Artisan crafting pottery
+  "https://images.pexels.com/photos/18635393/pexels-photo-18635393.jpeg" // Beautiful ceramic vessels
+];
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -53,7 +60,19 @@ export default function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [favorites, setFavorites] = useState<number[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { toast } = useToast();
+
+  // Auto-rotate hero images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const addToCart = (product: Product) => {
     setCart(prevCart => {
@@ -141,11 +160,34 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen hero-bg hero-pattern flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
-        {/* Hero Background Image */}
-        <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+        {/* Hero Background Image Carousel */}
+        <div className="absolute inset-0">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-20' : 'opacity-0'
+              }`}
+              style={{ backgroundImage: `url(${image})` }}
+            />
+          ))}
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex
+                  ? 'bg-orange-500 scale-125'
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
         
         {/* Enhanced Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
