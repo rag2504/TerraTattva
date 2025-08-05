@@ -33,6 +33,7 @@ export default function About() {
         setFavorites={setFavorites}
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
+        featuredProducts={[]}
       />
 
       {/* Page Header */}
