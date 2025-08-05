@@ -149,74 +149,74 @@ export default function Index() {
         
         {/* Enhanced Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Large floating elements */}
-          <div className="absolute top-12 left-8 w-24 h-24 bg-gradient-to-br from-orange-300/20 to-red-300/20 rounded-full floating-element opacity-60 blur-sm"></div>
-          <div className="absolute bottom-16 right-12 w-32 h-32 bg-gradient-to-br from-red-300/25 to-orange-300/25 rounded-full floating-delayed opacity-50 blur-sm"></div>
+          {/* Large floating elements - Hidden on mobile */}
+          <div className="hidden sm:block absolute top-12 left-8 w-24 h-24 bg-gradient-to-br from-orange-300/20 to-red-300/20 rounded-full floating-element opacity-60 blur-sm"></div>
+          <div className="hidden sm:block absolute bottom-16 right-12 w-32 h-32 bg-gradient-to-br from-red-300/25 to-orange-300/25 rounded-full floating-delayed opacity-50 blur-sm"></div>
           
-          {/* Medium floating elements */}
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-orange-300/30 rounded-full floating-element opacity-40"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-red-300/20 to-orange-400/20 rounded-full floating-delayed opacity-35"></div>
+          {/* Medium floating elements - Smaller on mobile */}
+          <div className="absolute top-1/3 right-1/4 w-8 h-8 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-400/20 to-orange-300/20 sm:from-orange-400/30 sm:to-orange-300/30 rounded-full floating-element opacity-30 sm:opacity-40"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-10 h-10 sm:w-20 sm:h-20 bg-gradient-to-br from-red-300/15 to-orange-400/15 sm:from-red-300/20 sm:to-orange-400/20 rounded-full floating-delayed opacity-25 sm:opacity-35"></div>
           
-          {/* Small accent dots */}
-          <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-orange-500 rounded-full animate-pulse-glow"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-pulse-glow"></div>
-          <div className="absolute top-2/3 left-1/6 w-4 h-4 bg-orange-400 rounded-full animate-pulse-glow"></div>
+          {/* Small accent dots - Hidden on mobile */}
+          <div className="hidden sm:block absolute top-1/4 left-1/3 w-3 h-3 bg-orange-500 rounded-full animate-pulse-glow"></div>
+          <div className="hidden sm:block absolute bottom-1/4 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-pulse-glow"></div>
+          <div className="hidden sm:block absolute top-2/3 left-1/6 w-4 h-4 bg-orange-400 rounded-full animate-pulse-glow"></div>
           
-          {/* Decorative lines */}
-          <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
-          <div className="absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-red-500/30 to-transparent"></div>
+          {/* Decorative lines - Hidden on mobile */}
+          <div className="hidden sm:block absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
+          <div className="hidden sm:block absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-red-500/30 to-transparent"></div>
         </div>
 
         {/* Main Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center pt-8 sm:pt-0">
             {/* Animated Badge */}
-            <div className="mb-8 flex justify-center">
-              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-                <Sparkles className="w-4 h-4 mr-2" />
+            <div className="mb-6 sm:mb-8 flex justify-center">
+              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Handcrafted with Love
               </Badge>
             </div>
 
             {/* Main Title */}
-            <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight">
+            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 leading-tight tracking-tight">
               TerraTattva
             </h1>
 
             {/* Subtitle */}
-            <div className="mb-8 space-y-4">
-              <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
+            <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-4">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
                 Home décor with a desi touch –
               </p>
-              <p className="text-2xl sm:text-3xl md:text-4xl text-orange-600 font-bold max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-orange-600 font-bold max-w-4xl mx-auto leading-relaxed">
                 मिट्टी, मेहनत और mindful living
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              <Heart className="inline w-5 h-5 mr-2 text-orange-600" />
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
+              <Heart className="inline w-4 h-4 sm:w-5 sm:h-5 mr-2 text-orange-600" />
               Every purchase supports a local artisan and preserves ancient traditions
-              <Star className="inline w-5 h-5 ml-2 text-red-500" />
+              <Star className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2 text-red-500" />
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Link to="/products" className="w-full sm:w-auto">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-12 py-6 text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
                   Explore Collection
-                  <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Link to="/about" className="w-full sm:w-auto">
-                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-12 py-6 text-xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Our Story
                 </Button>
               </Link>
             </div>
 
-            {/* Additional Accent Elements */}
-            <div className="mt-16 flex justify-center space-x-8 opacity-60">
+            {/* Additional Accent Elements - Hidden on mobile */}
+            <div className="hidden sm:flex mt-16 justify-center space-x-8 opacity-60">
               <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
               <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
