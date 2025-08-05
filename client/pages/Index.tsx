@@ -214,45 +214,45 @@ export default function Index() {
         <div className="relative z-10 w-full max-w-6xl mx-auto">
           <div className="text-center">
             {/* Animated Badge */}
-            <div className="mb-4 sm:mb-6 lg:mb-8 flex justify-center animate-[fadeInUp_1s_ease-out_0.2s_both]">
-              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <div className="mb-6 sm:mb-8 lg:mb-10 flex justify-center animate-[fadeInUp_1s_ease-out_0.2s_both]">
+              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Handcrafted with Love
               </Badge>
             </div>
 
             {/* Main Title */}
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight animate-[fadeInUp_1s_ease-out_0.4s_both]">
+            <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 sm:mb-8 lg:mb-10 leading-tight tracking-tight animate-[fadeInUp_1s_ease-out_0.4s_both]">
               TerraTattva
             </h1>
 
             {/* Subtitle */}
-            <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-3 px-2 animate-[fadeInUp_1s_ease-out_0.6s_both]">
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
+            <div className="mb-6 sm:mb-8 lg:mb-10 space-y-3 sm:space-y-4 px-2 animate-[fadeInUp_1s_ease-out_0.6s_both]">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-700 font-medium max-w-5xl mx-auto leading-relaxed">
                 Home décor with a desi touch –
               </p>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange-600 font-bold max-w-4xl mx-auto leading-relaxed">
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-orange-600 font-bold max-w-5xl mx-auto leading-relaxed">
                 मिट्टी, मेहनत और mindful living
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-              <Heart className="inline w-4 h-4 sm:w-5 sm:h-5 mr-2 text-orange-600" />
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-2 animate-[fadeInUp_1s_ease-out_0.8s_both]">
+              <Heart className="inline w-5 h-5 sm:w-6 sm:h-6 mr-3 text-orange-600" />
               Every purchase supports a local artisan and preserves ancient traditions
-              <Star className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2 text-red-500" />
+              <Star className="inline w-5 h-5 sm:w-6 sm:h-6 ml-3 text-red-500" />
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 animate-[fadeInUp_1s_ease-out_1s_both]">
-              <Link to="/products" className="w-full sm:w-auto max-w-xs sm:max-w-none">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 animate-[fadeInUp_1s_ease-out_1s_both]">
+              <Link to="/products" className="w-full sm:w-auto max-w-sm sm:max-w-none">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
                   Explore Collection
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-3 h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link to="/about" className="w-full sm:w-auto max-w-xs sm:max-w-none">
-                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link to="/about" className="w-full sm:w-auto max-w-sm sm:max-w-none">
+                <Button className="w-full sm:w-auto bg-white/90 backdrop-blur-sm border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl lg:text-2xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Our Story
                 </Button>
               </Link>
