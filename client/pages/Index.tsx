@@ -188,7 +188,6 @@ export default function Index() {
           ))}
         </div>
 
-
         {/* Enhanced Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large floating elements */}
