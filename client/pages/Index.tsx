@@ -188,21 +188,6 @@ export default function Index() {
           ))}
         </div>
 
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20 animate-[fadeInUp_1s_ease-out_1.2s_both]">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                index === currentImageIndex
-                  ? "bg-orange-500 scale-125"
-                  : "bg-white/50 hover:bg-white/70"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
 
         {/* Enhanced Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
