@@ -20,20 +20,16 @@ export default function Footer() {
               Empowering artisans, preserving traditions, and bringing authentic 
               handcrafted pottery to homes around the world.
             </p>
-            <div className="flex space-x-4">
-              <a 
+            <div>
+              <p className="text-gray-400 text-sm mb-3">Follow us here</p>
+              <a
                 href="https://www.instagram.com/terratattva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 p-3 rounded-full hover:opacity-80 transition-opacity"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 rounded-full hover:opacity-80 transition-opacity"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-blue-600 p-3 rounded-full hover:opacity-80 transition-opacity">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="bg-blue-400 p-3 rounded-full hover:opacity-80 transition-opacity">
-                <Twitter className="h-5 w-5" />
+                <span className="text-white font-medium">Instagram</span>
               </a>
             </div>
           </div>
