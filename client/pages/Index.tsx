@@ -149,13 +149,14 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
-      <Header 
+      <Header
         cart={cart}
         setCart={setCart}
         favorites={favorites}
         setFavorites={setFavorites}
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
+        featuredProducts={featuredProducts}
       />
 
       {/* Hero Section */}
