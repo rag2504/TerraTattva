@@ -242,9 +242,8 @@ export default function About() {
             </Link>
             <Link to="/contact">
               <Button
-                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-medium rounded-full"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 transition-all duration-300 px-8 py-4 text-lg font-medium rounded-full"
               >
                 Get in Touch
               </Button>
