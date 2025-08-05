@@ -198,7 +198,6 @@ export default function Index() {
           <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-orange-300/30 rounded-full floating-element opacity-40 animate-[fadeInScale_2s_ease-out_1.5s_both]"></div>
           <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-red-300/20 to-orange-400/20 rounded-full floating-delayed opacity-35 animate-[fadeInScale_2s_ease-out_2s_both]"></div>
 
-
           {/* Decorative lines */}
           <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent animate-[slideInLeft_2s_ease-out_2s_both]"></div>
           <div className="absolute top-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-red-500/30 to-transparent animate-[slideInRight_2s_ease-out_2.5s_both]"></div>
