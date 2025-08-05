@@ -159,19 +159,19 @@ export default function About() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">50+</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">25+</div>
               <div className="text-gray-600">Artisans Supported</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">1000+</div>
-              <div className="text-gray-600">Happy Customers</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">8</div>
+              <div className="text-gray-600">Villages Connected</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">15</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">5</div>
               <div className="text-gray-600">States Covered</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">150+</div>
               <div className="text-gray-600">Pieces Sold</div>
             </div>
           </div>
@@ -240,10 +240,10 @@ export default function About() {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-medium rounded-full"
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-medium rounded-full"
               >
                 Get in Touch
               </Button>
