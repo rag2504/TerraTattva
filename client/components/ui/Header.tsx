@@ -27,10 +27,12 @@ interface HeaderProps {
   setFavorites: React.Dispatch<React.SetStateAction<number[]>>;
   isCartOpen: boolean;
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  featuredProducts: Product[];
 }
 
-export default function Header({ cart, setCart, favorites, setFavorites, isCartOpen, setIsCartOpen }: HeaderProps) {
+export default function Header({ cart, setCart, favorites, setFavorites, isCartOpen, setIsCartOpen, featuredProducts }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
   const location = useLocation();
   const { toast } = useToast();
 
@@ -69,6 +71,46 @@ export default function Header({ cart, setCart, favorites, setFavorites, isCartO
   };
 
   const isActivePage = (path: string) => location.pathname === path;
+
+  const getFavoriteProducts = () => {
+    return featuredProducts.filter(product => favorites.includes(product.id));
+  };
+
+  const addToCartFromFavorites = (product: Product) => {
+    setCart(prevCart => {
+      const existingItem = prevCart.find(item => item.id === product.id);
+      if (existingItem) {
+        toast({
+          title: "Quantity Updated!",
+          description: `${product.name} quantity increased to ${existingItem.quantity + 1}`,
+          action: <CheckCircle className="h-4 w-4 text-green-600" />,
+        });
+        return prevCart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      toast({
+        title: "Added to Cart!",
+        description: `${product.name} has been added to your cart.`,
+        action: <CheckCircle className="h-4 w-4 text-green-600" />,
+      });
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
+  const removeFromFavorites = (productId: number) => {
+    const product = featuredProducts.find(p => p.id === productId);
+    setFavorites(prev => prev.filter(id => id !== productId));
+    if (product) {
+      toast({
+        title: "Removed from Favorites",
+        description: `${product.name} has been removed from your favorites.`,
+        action: <Heart className="h-4 w-4 text-gray-400" />,
+      });
+    }
+  };
 
   return (
     <header className="bg-white/95 backdrop-blur-lg shadow-xl border-b-2 border-gradient-to-r from-orange-200 to-red-200 sticky top-0 z-50">
@@ -133,14 +175,71 @@ export default function Header({ cart, setCart, favorites, setFavorites, isCartO
           {/* Right Side - Cart & Mobile Menu */}
           <div className="flex items-center space-x-1 sm:space-x-3 flex-shrink-0 ml-auto lg:ml-0">
             {/* Favorites */}
-            <Button variant="ghost" size="sm" className="relative p-2 sm:p-3 hover:bg-orange-50 rounded-full">
-              <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
-              {favorites.length > 0 && (
-                <Badge className="absolute -top-1 -right-1 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center p-0 bg-red-500 text-white text-xs rounded-full">
-                  {favorites.length}
-                </Badge>
-              )}
-            </Button>
+            <Dialog open={isFavoritesOpen} onOpenChange={setIsFavoritesOpen}>
+              <DialogTrigger asChild>
+                <Button variant="ghost" size="sm" className="relative p-2 sm:p-3 hover:bg-orange-50 rounded-full">
+                  <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
+                  {favorites.length > 0 && (
+                    <Badge className="absolute -top-1 -right-1 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center p-0 bg-red-500 text-white text-xs rounded-full">
+                      {favorites.length}
+                    </Badge>
+                  )}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-lg">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center justify-between text-2xl">
+                    <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Favorites</span>
+                    <Badge variant="secondary" className="bg-red-100 text-red-700 px-3 py-1">
+                      {favorites.length} items
+                    </Badge>
+                  </DialogTitle>
+                </DialogHeader>
+
+                <div className="max-h-96 overflow-y-auto">
+                  {favorites.length === 0 ? (
+                    <div className="text-center py-12">
+                      <Heart className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-gray-600 mb-2">No favorites yet</h3>
+                      <p className="text-gray-400">Start adding items to your favorites!</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {getFavoriteProducts().map((product) => (
+                        <div key={product.id} className="flex items-center space-x-4 p-4 border border-red-100 rounded-xl bg-gradient-to-r from-red-50 to-pink-50">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-20 h-20 object-cover rounded-xl shadow-md"
+                          />
+                          <div className="flex-1">
+                            <h4 className="font-bold text-gray-900 text-lg">{product.name}</h4>
+                            <p className="text-red-600 font-bold text-xl">₹{product.price}</p>
+                            <div className="flex items-center space-x-2 mt-3">
+                              <Button
+                                size="sm"
+                                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-3 py-1 text-xs rounded-full"
+                                onClick={() => addToCartFromFavorites(product)}
+                              >
+                                Add to Cart
+                              </Button>
+                            </div>
+                          </div>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="text-red-500 hover:text-red-700 hover:bg-red-50 p-2 rounded-full"
+                            onClick={() => removeFromFavorites(product.id)}
+                          >
+                            <X className="h-5 w-5" />
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
 
             {/* Shopping Cart */}
             <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
