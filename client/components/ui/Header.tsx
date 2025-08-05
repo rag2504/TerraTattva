@@ -149,12 +149,12 @@ export default function Header({
               alt="TerraTattva Logo"
               className="w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-xl shadow-lg border-2 border-orange-200 flex-shrink-0"
             />
-            <Link
-              to="/"
+            <a
+              href="/"
               className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-orange-700 bg-clip-text text-transparent truncate"
             >
               TerraTattva
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation - Centered */}
