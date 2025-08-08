@@ -95,7 +95,39 @@ export default function Index() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { toast } = useToast();
 
-  // Auto-rotate hero images every 5 seconds
+  // Load cart and favorites from localStorage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('terraTattvaCart');
+    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (error) {
+        console.error('Error parsing saved cart:', error);
+      }
+    }
+
+    if (savedFavorites) {
+      try {
+        setFavorites(JSON.parse(savedFavorites));
+      } catch (error) {
+        console.error('Error parsing saved favorites:', error);
+      }
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('terraTattvaCart', JSON.stringify(cart));
+  }, [cart]);
+
+  // Save favorites to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('terraTattvaFavorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  // Auto-rotate hero images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
