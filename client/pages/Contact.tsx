@@ -61,6 +61,7 @@ export default function Contact() {
         setFavorites={setFavorites}
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
+        featuredProducts={[]}
       />
 
       {/* Page Header */}
