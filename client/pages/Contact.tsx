@@ -27,6 +27,31 @@ export default function Contact() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [favorites, setFavorites] = useState<number[]>([]);
 
+  // Load cart and favorites from localStorage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('terraTattvaCart');
+    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (error) {
+        console.error('Error parsing saved cart:', error);
+      }
+    }
+
+    if (savedFavorites) {
+      try {
+        setFavorites(JSON.parse(savedFavorites));
+      } catch (error) {
+        console.error('Error parsing saved favorites:', error);
+      }
+    }
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-red-50">
       <Header
