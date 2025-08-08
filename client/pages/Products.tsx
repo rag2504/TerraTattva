@@ -177,15 +177,15 @@ export default function Products() {
       </section>
 
       {/* Filter Categories */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-6 sm:py-8 px-3 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-12">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full transition-all duration-300 ${
+                className={`px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 text-xs sm:text-sm lg:text-base rounded-full transition-all duration-300 ${
                   selectedCategory === category
                     ? "bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg"
                     : "border-orange-300 text-orange-600 hover:bg-orange-50"
