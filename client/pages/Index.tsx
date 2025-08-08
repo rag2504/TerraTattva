@@ -51,10 +51,11 @@ const featuredProducts: Product[] = [
     images: [
       "https://i.postimg.cc/ZnB9HTt3/IMG-20250808-WA0017.jpg",
       "https://i.postimg.cc/FFWw83wN/IMG-20250808-WA0021.jpg",
-      "https://i.postimg.cc/mgQXLHpc/Whats-App-Image-2025-08-08-at-20-14-23-3145543a.jpg"
+      "https://i.postimg.cc/mgQXLHpc/Whats-App-Image-2025-08-08-at-20-14-23-3145543a.jpg",
     ],
     dimensions: "Width 1cm × Length 11cm × Height 19cm",
-    description: "Drawing from the charm of traditional Indian pottery, this design uses soft pastel shades and hand-sculpted floral motifs to bring a modern twist to heritage craft. It blends rustic textures with elegant detailing, making each piece a celebration of earthy beauty.",
+    description:
+      "Drawing from the charm of traditional Indian pottery, this design uses soft pastel shades and hand-sculpted floral motifs to bring a modern twist to heritage craft. It blends rustic textures with elegant detailing, making each piece a celebration of earthy beauty.",
   },
   {
     id: 2,
@@ -64,10 +65,11 @@ const featuredProducts: Product[] = [
     images: [
       "https://i.postimg.cc/hj3MybvY/IMG-20250808-WA0022.jpg",
       "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg",
-      "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg"
+      "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg",
     ],
     dimensions: "Height 7cm × Width 0.5cm × Length 7.5cm",
-    description: "With its raw, tribal charm, Warli patterns narrate stories of community, nature, and rituals using delicate geometric forms — minimal yet deeply expressive.",
+    description:
+      "With its raw, tribal charm, Warli patterns narrate stories of community, nature, and rituals using delicate geometric forms — minimal yet deeply expressive.",
   },
   {
     id: 3,
@@ -77,10 +79,11 @@ const featuredProducts: Product[] = [
     images: [
       "https://images.pexels.com/photos/6243345/pexels-photo-6243345.jpeg",
       "https://images.pexels.com/photos/6694342/pexels-photo-6694342.jpeg",
-      "https://images.pexels.com/photos/18635393/pexels-photo-18635393.jpeg"
+      "https://images.pexels.com/photos/18635393/pexels-photo-18635393.jpeg",
     ],
     dimensions: "Height 3cm × Diameter 5cm (Set of 6)",
-    description: "Handcrafted clay diyas that bring the warmth of traditional festivals to your home. Each diya is carefully shaped and finished by skilled artisans, perfect for creating a serene and spiritual ambiance.",
+    description:
+      "Handcrafted clay diyas that bring the warmth of traditional festivals to your home. Each diya is carefully shaped and finished by skilled artisans, perfect for creating a serene and spiritual ambiance.",
   },
 ];
 
@@ -97,14 +100,14 @@ export default function Index() {
 
   // Load cart and favorites from localStorage on component mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('terraTattvaCart');
-    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+    const savedCart = localStorage.getItem("terraTattvaCart");
+    const savedFavorites = localStorage.getItem("terraTattvaFavorites");
 
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (error) {
-        console.error('Error parsing saved cart:', error);
+        console.error("Error parsing saved cart:", error);
       }
     }
 
@@ -112,19 +115,19 @@ export default function Index() {
       try {
         setFavorites(JSON.parse(savedFavorites));
       } catch (error) {
-        console.error('Error parsing saved favorites:', error);
+        console.error("Error parsing saved favorites:", error);
       }
     }
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('terraTattvaCart', JSON.stringify(cart));
+    localStorage.setItem("terraTattvaCart", JSON.stringify(cart));
   }, [cart]);
 
   // Save favorites to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('terraTattvaFavorites', JSON.stringify(favorites));
+    localStorage.setItem("terraTattvaFavorites", JSON.stringify(favorites));
   }, [favorites]);
 
   // Auto-rotate hero images every 3 seconds
@@ -481,9 +484,7 @@ export default function Index() {
 
                     <div className="flex gap-3">
                       <Link to={`/product/${product.id}`} className="flex-1">
-                        <Button
-                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                        >
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                           👁️ View Details
                         </Button>
                       </Link>

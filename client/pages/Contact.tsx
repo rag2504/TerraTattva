@@ -7,7 +7,16 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import { ArrowLeft, Mail, Phone, MapPin, Clock, Instagram, Facebook, Twitter } from "lucide-react";
+import {
+  ArrowLeft,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
 
 interface Product {
   id: number;
@@ -29,14 +38,14 @@ export default function Contact() {
 
   // Load cart and favorites from localStorage on component mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('terraTattvaCart');
-    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+    const savedCart = localStorage.getItem("terraTattvaCart");
+    const savedFavorites = localStorage.getItem("terraTattvaFavorites");
 
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (error) {
-        console.error('Error parsing saved cart:', error);
+        console.error("Error parsing saved cart:", error);
       }
     }
 
@@ -44,7 +53,7 @@ export default function Contact() {
       try {
         setFavorites(JSON.parse(savedFavorites));
       } catch (error) {
-        console.error('Error parsing saved favorites:', error);
+        console.error("Error parsing saved favorites:", error);
       }
     }
 
@@ -75,14 +84,17 @@ export default function Contact() {
               </Button>
             </Link>
           </div>
-          
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Get in <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Touch</span>
+              Get in{" "}
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                Touch
+              </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions about our pottery collection or want to learn more about our artisans? 
-              We'd love to hear from you.
+              Have questions about our pottery collection or want to learn more
+              about our artisans? We'd love to hear from you.
             </p>
           </div>
         </div>
@@ -95,80 +107,100 @@ export default function Contact() {
             {/* Contact Form */}
             <Card className="bg-white shadow-lg">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Send us a Message
+                </h2>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="firstName"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         First Name
                       </Label>
-                      <Input 
-                        id="firstName" 
+                      <Input
+                        id="firstName"
                         placeholder="Your first name"
                         className="mt-1"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="lastName"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Last Name
                       </Label>
-                      <Input 
-                        id="lastName" 
+                      <Input
+                        id="lastName"
                         placeholder="Your last name"
                         className="mt-1"
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="email"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Email Address
                     </Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
+                    <Input
+                      id="email"
+                      type="email"
                       placeholder="your.email@example.com"
                       className="mt-1"
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="phone"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Phone Number (Optional)
                     </Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
+                    <Input
+                      id="phone"
+                      type="tel"
                       placeholder="+91 98765 43210"
                       className="mt-1"
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="subject"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Subject
                     </Label>
-                    <Input 
-                      id="subject" 
+                    <Input
+                      id="subject"
                       placeholder="What can we help you with?"
                       className="mt-1"
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="message"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Message
                     </Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       placeholder="Tell us more about your inquiry..."
                       rows={6}
                       className="mt-1"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 text-lg font-medium"
                   >
                     Send Message
@@ -180,10 +212,12 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Contact Information
+                </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                  We're here to help! Reach out to us through any of the following ways, 
-                  and we'll get back to you as soon as possible.
+                  We're here to help! Reach out to us through any of the
+                  following ways, and we'll get back to you as soon as possible.
                 </p>
               </div>
 
@@ -195,9 +229,16 @@ export default function Contact() {
                         <Mail className="h-6 w-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                        <p className="text-gray-600 mb-2">Send us an email anytime</p>
-                        <a href="mailto:hello@terratattva.com" className="text-orange-600 hover:text-orange-700 font-medium">
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          Email Us
+                        </h3>
+                        <p className="text-gray-600 mb-2">
+                          Send us an email anytime
+                        </p>
+                        <a
+                          href="mailto:hello@terratattva.com"
+                          className="text-orange-600 hover:text-orange-700 font-medium"
+                        >
                           hello@terratattva.com
                         </a>
                       </div>
@@ -212,9 +253,16 @@ export default function Contact() {
                         <Phone className="h-6 w-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                        <p className="text-gray-600 mb-2">Speak with our team</p>
-                        <a href="tel:+919876543210" className="text-orange-600 hover:text-orange-700 font-medium">
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          Call Us
+                        </h3>
+                        <p className="text-gray-600 mb-2">
+                          Speak with our team
+                        </p>
+                        <a
+                          href="tel:+919876543210"
+                          className="text-orange-600 hover:text-orange-700 font-medium"
+                        >
                           +91 98765 43210
                         </a>
                       </div>
@@ -229,11 +277,17 @@ export default function Contact() {
                         <MapPin className="h-6 w-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Visit Us</h3>
-                        <p className="text-gray-600 mb-2">Come see our collection</p>
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          Visit Us
+                        </h3>
+                        <p className="text-gray-600 mb-2">
+                          Come see our collection
+                        </p>
                         <p className="text-orange-600 font-medium">
-                          123 Pottery Street<br />
-                          Artisan Quarter, Mumbai<br />
+                          123 Pottery Street
+                          <br />
+                          Artisan Quarter, Mumbai
+                          <br />
                           Maharashtra 400001, India
                         </p>
                       </div>
@@ -248,10 +302,14 @@ export default function Contact() {
                         <Clock className="h-6 w-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          Business Hours
+                        </h3>
                         <p className="text-gray-600">
-                          Monday - Friday: 9:00 AM - 6:00 PM<br />
-                          Saturday: 10:00 AM - 4:00 PM<br />
+                          Monday - Friday: 9:00 AM - 6:00 PM
+                          <br />
+                          Saturday: 10:00 AM - 4:00 PM
+                          <br />
                           Sunday: Closed
                         </p>
                       </div>
@@ -262,9 +320,11 @@ export default function Contact() {
 
               {/* Social Media */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Follow Us
+                </h3>
                 <div className="flex space-x-4">
-                  <a 
+                  <a
                     href="https://www.instagram.com/terratattva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                     target="_blank"
                     rel="noopener noreferrer"
@@ -272,10 +332,16 @@ export default function Contact() {
                   >
                     <Instagram className="h-6 w-6 text-white" />
                   </a>
-                  <a href="#" className="bg-blue-600 p-3 rounded-full hover:opacity-80 transition-opacity">
+                  <a
+                    href="#"
+                    className="bg-blue-600 p-3 rounded-full hover:opacity-80 transition-opacity"
+                  >
                     <Facebook className="h-6 w-6 text-white" />
                   </a>
-                  <a href="#" className="bg-blue-400 p-3 rounded-full hover:opacity-80 transition-opacity">
+                  <a
+                    href="#"
+                    className="bg-blue-400 p-3 rounded-full hover:opacity-80 transition-opacity"
+                  >
                     <Twitter className="h-6 w-6 text-white" />
                   </a>
                 </div>

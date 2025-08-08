@@ -5,7 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import { Heart, Eye, Star, ArrowLeft, ShoppingCart, CheckCircle } from "lucide-react";
+import {
+  Heart,
+  Eye,
+  Star,
+  ArrowLeft,
+  ShoppingCart,
+  CheckCircle,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { featuredProducts, Product } from "./Index";
@@ -26,14 +33,14 @@ export default function Products() {
     window.scrollTo(0, 0);
 
     // Load cart and favorites from localStorage
-    const savedCart = localStorage.getItem('terraTattvaCart');
-    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+    const savedCart = localStorage.getItem("terraTattvaCart");
+    const savedFavorites = localStorage.getItem("terraTattvaFavorites");
 
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (error) {
-        console.error('Error parsing saved cart:', error);
+        console.error("Error parsing saved cart:", error);
       }
     }
 
@@ -41,26 +48,26 @@ export default function Products() {
       try {
         setFavorites(JSON.parse(savedFavorites));
       } catch (error) {
-        console.error('Error parsing saved favorites:', error);
+        console.error("Error parsing saved favorites:", error);
       }
     }
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('terraTattvaCart', JSON.stringify(cart));
+    localStorage.setItem("terraTattvaCart", JSON.stringify(cart));
   }, [cart]);
 
   // Save favorites to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('terraTattvaFavorites', JSON.stringify(favorites));
+    localStorage.setItem("terraTattvaFavorites", JSON.stringify(favorites));
   }, [favorites]);
 
   const categories = ["All", "Pottery", "Decorative", "Functional"];
 
   const addToCart = (product: Product) => {
-    setCart(prevCart => {
-      const existingItem = prevCart.find(item => item.id === product.id);
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
         const newQuantity = existingItem.quantity + 1;
         toast({
@@ -68,10 +75,8 @@ export default function Products() {
           description: `${product.name} - Quantity: ${newQuantity} - Total: ₹${product.price * newQuantity}`,
           action: <CheckCircle className="h-4 w-4 text-green-600" />,
         });
-        return prevCart.map(item =>
-          item.id === product.id 
-            ? { ...item, quantity: newQuantity }
-            : item
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: newQuantity } : item,
         );
       }
       toast({
@@ -84,8 +89,8 @@ export default function Products() {
   };
 
   const toggleFavorite = (productId: number) => {
-    const product = featuredProducts.find(p => p.id === productId);
-    setFavorites(prev => {
+    const product = featuredProducts.find((p) => p.id === productId);
+    setFavorites((prev) => {
       const isAlreadyFavorite = prev.includes(productId);
       if (isAlreadyFavorite) {
         toast({
@@ -101,7 +106,7 @@ export default function Products() {
         });
       }
       return isAlreadyFavorite
-        ? prev.filter(id => id !== productId)
+        ? prev.filter((id) => id !== productId)
         : [...prev, productId];
     });
   };
@@ -116,12 +121,18 @@ export default function Products() {
     setIsCartOpen(true);
   };
 
-  const filteredProducts = selectedCategory === "All" 
-    ? featuredProducts 
-    : featuredProducts.filter(product => 
-        product.name.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-        product.description.toLowerCase().includes(selectedCategory.toLowerCase())
-      );
+  const filteredProducts =
+    selectedCategory === "All"
+      ? featuredProducts
+      : featuredProducts.filter(
+          (product) =>
+            product.name
+              .toLowerCase()
+              .includes(selectedCategory.toLowerCase()) ||
+            product.description
+              .toLowerCase()
+              .includes(selectedCategory.toLowerCase()),
+        );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-red-50">
@@ -146,16 +157,19 @@ export default function Products() {
               </Button>
             </Link>
           </div>
-          
+
           <div className="text-center mb-16">
             <Badge className="bg-white/90 text-orange-600 border border-orange-200 px-4 py-2 text-sm font-medium mb-6">
               Our Collection
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Handcrafted <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Pottery</span>
+              Handcrafted{" "}
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                Pottery
+              </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our curated selection of authentic handcrafted pottery, 
+              Discover our curated selection of authentic handcrafted pottery,
               each piece uniquely beautiful and culturally significant.
             </p>
           </div>
@@ -192,7 +206,7 @@ export default function Products() {
               <div key={product.id} className="group cursor-pointer">
                 <Card className="relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 pottery-card-hover">
                   <div className="relative aspect-square overflow-hidden">
-                    <img 
+                    <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -207,8 +221,8 @@ export default function Products() {
                           toggleFavorite(product.id);
                         }}
                       >
-                        <Heart 
-                          className={`h-5 w-5 ${favorites.includes(product.id) ? 'fill-red-500 text-red-500' : 'text-gray-600'}`} 
+                        <Heart
+                          className={`h-5 w-5 ${favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-gray-600"}`}
                         />
                       </Button>
                       <Link to={`/product/${product.id}`}>
@@ -223,45 +237,57 @@ export default function Products() {
                     </div>
                     {product.originalPrice && (
                       <Badge className="absolute top-4 left-4 bg-red-500 text-white font-semibold px-3 py-1">
-                        {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                        {Math.round(
+                          ((product.originalPrice - product.price) /
+                            product.originalPrice) *
+                            100,
+                        )}
+                        % OFF
                       </Badge>
                     )}
                   </div>
-                  
+
                   <CardContent className="p-6">
                     <Link to={`/product/${product.id}`}>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-orange-600 transition-colors">
                         {product.name}
                       </h3>
                     </Link>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
-                    
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      {product.description}
+                    </p>
+
                     <div className="flex items-center mb-4">
                       <div className="flex items-center space-x-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          <Star
+                            key={i}
+                            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                          />
                         ))}
                       </div>
                       <span className="text-sm text-gray-600 ml-2">(4.8)</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-orange-600">₹{product.price}</span>
+                      <span className="text-2xl font-bold text-orange-600">
+                        ₹{product.price}
+                      </span>
                       {product.originalPrice && (
-                        <span className="text-lg text-gray-500 line-through">₹{product.originalPrice}</span>
+                        <span className="text-lg text-gray-500 line-through">
+                          ₹{product.originalPrice}
+                        </span>
                       )}
                     </div>
-                    
+
                     <div className="flex gap-3">
                       <Link to={`/product/${product.id}`} className="flex-1">
-                        <Button 
-                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                        >
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                           👁️ View Details
                         </Button>
                       </Link>
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         className="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-red-600 hover:text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
                         onClick={(e) => {
                           e.preventDefault();
@@ -285,7 +311,7 @@ export default function Products() {
               <p className="text-gray-500 mb-8">
                 Try selecting a different category or browse all products.
               </p>
-              <Button 
+              <Button
                 onClick={() => setSelectedCategory("All")}
                 className="bg-orange-600 hover:bg-orange-700"
               >
@@ -303,12 +329,12 @@ export default function Products() {
             Can't Find What You're Looking For?
           </h2>
           <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-            We're always adding new pieces to our collection. Contact us for custom orders 
-            or to learn about upcoming arrivals.
+            We're always adding new pieces to our collection. Contact us for
+            custom orders or to learn about upcoming arrivals.
           </p>
           <Link to="/contact">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-orange-600 hover:bg-gray-50 px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Contact Us

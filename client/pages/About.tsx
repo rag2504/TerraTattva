@@ -26,14 +26,14 @@ export default function About() {
 
   // Load cart and favorites from localStorage on component mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('terraTattvaCart');
-    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+    const savedCart = localStorage.getItem("terraTattvaCart");
+    const savedFavorites = localStorage.getItem("terraTattvaFavorites");
 
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (error) {
-        console.error('Error parsing saved cart:', error);
+        console.error("Error parsing saved cart:", error);
       }
     }
 
@@ -41,7 +41,7 @@ export default function About() {
       try {
         setFavorites(JSON.parse(savedFavorites));
       } catch (error) {
-        console.error('Error parsing saved favorites:', error);
+        console.error("Error parsing saved favorites:", error);
       }
     }
 
