@@ -30,7 +30,37 @@ export default function ProductDetail() {
     }
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+
+    // Load cart and favorites from localStorage
+    const savedCart = localStorage.getItem('terraTattvaCart');
+    const savedFavorites = localStorage.getItem('terraTattvaFavorites');
+
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (error) {
+        console.error('Error parsing saved cart:', error);
+      }
+    }
+
+    if (savedFavorites) {
+      try {
+        setFavorites(JSON.parse(savedFavorites));
+      } catch (error) {
+        console.error('Error parsing saved favorites:', error);
+      }
+    }
   }, [id]);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('terraTattvaCart', JSON.stringify(cart));
+  }, [cart]);
+
+  // Save favorites to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('terraTattvaFavorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const addToCart = (product: Product, quantity: number = 1) => {
     setCart(prevCart => {
