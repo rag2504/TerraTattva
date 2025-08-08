@@ -221,41 +221,41 @@ export default function ProductDetail() {
             </div>
 
             {/* Product Info */}
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               <div>
                 <Badge className="bg-orange-100 text-orange-700 mb-4">
                   100% Handcrafted
                 </Badge>
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
-                <div className="flex items-center space-x-4 mb-6">
-                  <span className="text-4xl font-bold text-orange-600">₹{product.price}</span>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 lg:mb-4">{product.name}</h1>
+                <div className="flex items-center space-x-3 lg:space-x-4 mb-4 lg:mb-6">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600">₹{product.price}</span>
                   {product.originalPrice && (
                     <span className="text-2xl text-gray-500 line-through">₹{product.originalPrice}</span>
                   )}
                 </div>
-                <div className="flex items-center space-x-1 mb-6">
+                <div className="flex items-center space-x-1 mb-4 lg:mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="h-4 w-4 lg:h-5 lg:w-5 fill-yellow-400 text-yellow-400" />
                   ))}
-                  <span className="text-gray-600 ml-2">(4.8/5 from 24 reviews)</span>
+                  <span className="text-sm lg:text-base text-gray-600 ml-2">(4.8/5 from 24 reviews)</span>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Description</h3>
-                <p className="text-gray-600 leading-relaxed">{product.description}</p>
+              <div className="space-y-2 lg:space-y-4">
+                <h3 className="text-base lg:text-lg font-semibold text-gray-900">Description</h3>
+                <p className="text-sm lg:text-base text-gray-600 leading-relaxed">{product.description}</p>
               </div>
 
               {product.dimensions && (
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-gray-900">Dimensions</h3>
-                  <p className="text-gray-600">{product.dimensions}</p>
+                <div className="space-y-1 lg:space-y-2">
+                  <h3 className="text-base lg:text-lg font-semibold text-gray-900">Dimensions</h3>
+                  <p className="text-sm lg:text-base text-gray-600">{product.dimensions}</p>
                 </div>
               )}
 
               {/* Quantity Selector */}
               <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-gray-900">Quantity</h3>
+                <h3 className="text-base lg:text-lg font-semibold text-gray-900">Quantity</h3>
                 <div className="flex items-center space-x-3">
                   <Button
                     variant="outline"
@@ -265,7 +265,7 @@ export default function ProductDetail() {
                   >
                     -
                   </Button>
-                  <span className="text-xl font-semibold text-gray-700 min-w-[40px] text-center">
+                  <span className="text-lg lg:text-xl font-semibold text-gray-700 min-w-[40px] text-center">
                     {selectedQuantity}
                   </span>
                   <Button
@@ -281,17 +281,16 @@ export default function ProductDetail() {
 
               {/* Action Buttons */}
               <div className="space-y-4">
-                <div className="flex space-x-4">
-                  <Button 
-                    className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                  <Button
+                    className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-4 lg:py-6 text-base lg:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                     onClick={handleBuyNow}
                   >
-                    <ShoppingCart className="mr-2 h-5 w-5" />
+                    <ShoppingCart className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
                     Buy Now - ₹{product.price * selectedQuantity}
                   </Button>
-                  <Button 
-                    variant="outline"
-                    className="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-orange-50 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  <Button
+                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 lg:py-6 text-base lg:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                     onClick={() => addToCart(product, selectedQuantity)}
                   >
                     Add to Cart
