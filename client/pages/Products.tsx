@@ -146,148 +146,161 @@ export default function Products() {
         featuredProducts={featuredProducts}
       />
 
-      {/* Page Header */}
-      <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
+      {/* Page Header - Mobile Optimized */}
+      <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-red-50 to-orange-100">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center mb-6 sm:mb-8">
+          <div className="flex items-center mb-4 sm:mb-6">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="hover:bg-orange-100 text-sm">
+              <Button variant="ghost" size="sm" className="hover:bg-orange-100 text-sm bg-white/80 backdrop-blur-sm shadow-sm">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
               </Button>
             </Link>
           </div>
 
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <Badge className="bg-white/90 text-orange-600 border border-orange-200 px-3 py-2 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Our Collection
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 text-sm font-medium mb-4 sm:mb-6 shadow-lg">
+              ✨ Our Collection
             </Badge>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
               Handcrafted{" "}
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                 Pottery
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
-              Discover our curated selection of authentic handcrafted pottery,
-              each piece uniquely beautiful and culturally significant.
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
+              🏺 Discover authentic handcrafted pottery, each piece uniquely beautiful
             </p>
           </div>
         </div>
       </section>
 
-      {/* Filter Categories */}
-      <section className="py-6 sm:py-8 px-3 sm:px-6 lg:px-8 bg-white">
+      {/* Filter Categories - Mobile Optimized */}
+      <section className="py-4 sm:py-6 px-4 sm:px-6 lg:px-8 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-12">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 text-xs sm:text-sm lg:text-base rounded-full transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg"
-                    : "border-orange-300 text-orange-600 hover:bg-orange-50"
-                }`}
-              >
-                {category}
-              </Button>
-            ))}
+          <div className="overflow-x-auto">
+            <div className="flex gap-3 pb-2 min-w-max justify-center">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2.5 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 min-w-[80px] ${
+                    selectedCategory === category
+                      ? "bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg scale-105"
+                      : "border-orange-300 text-orange-600 hover:bg-orange-50 bg-white"
+                  }`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 bg-white">
+      {/* Products Grid - Mobile First */}
+      <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredProducts.map((product) => (
               <div key={product.id} className="group cursor-pointer">
-                <Card className="relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 pottery-card-hover rounded-2xl">
-                  <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden">
+                <Card className="relative overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all duration-500 border-0 rounded-3xl backdrop-blur-sm">
+                  {/* Image Container with Better Mobile Ratio */}
+                  <div className="relative aspect-[3/2] sm:aspect-[4/3] lg:aspect-square overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex flex-col gap-1 sm:gap-2">
+                    {/* Mobile-Optimized Action Buttons */}
+                    <div className="absolute top-3 right-3 flex flex-col gap-2">
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-8 w-8 sm:h-10 sm:w-10 bg-white/90 hover:bg-white rounded-full shadow-lg"
+                        className="h-9 w-9 bg-white/95 hover:bg-white rounded-full shadow-lg backdrop-blur-sm border border-white/50"
                         onClick={(e) => {
                           e.preventDefault();
                           toggleFavorite(product.id);
                         }}
                       >
                         <Heart
-                          className={`h-4 w-4 sm:h-5 sm:w-5 ${favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-gray-600"}`}
+                          className={`h-4 w-4 ${favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-gray-600"}`}
                         />
                       </Button>
                       <Link to={`/product/${product.id}`}>
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-8 w-8 sm:h-10 sm:w-10 bg-white/90 hover:bg-white rounded-full shadow-lg"
+                          className="h-9 w-9 bg-white/95 hover:bg-white rounded-full shadow-lg backdrop-blur-sm border border-white/50"
                         >
-                          <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
+                          <Eye className="h-4 w-4 text-gray-600" />
                         </Button>
                       </Link>
                     </div>
+                    {/* Discount Badge */}
                     {product.originalPrice && (
-                      <Badge className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-red-500 text-white font-semibold px-2 py-1 text-xs sm:text-sm">
-                        {Math.round(
+                      <Badge className="absolute top-3 left-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold px-3 py-1.5 text-xs rounded-full shadow-lg">
+                        💸 {Math.round(
                           ((product.originalPrice - product.price) /
                             product.originalPrice) *
                             100,
-                        )}
-                        % OFF
+                        )}% OFF
                       </Badge>
                     )}
+                    {/* Mobile-Friendly Quick View Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  <CardContent className="p-3 sm:p-4 lg:p-6">
+                  {/* Card Content with Better Mobile Spacing */}
+                  <CardContent className="p-4 sm:p-5 lg:p-6 space-y-3">
+                    {/* Product Title */}
                     <Link to={`/product/${product.id}`}>
-                      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-2 hover:text-orange-600 transition-colors line-clamp-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 hover:text-orange-600 transition-colors line-clamp-1 leading-tight">
                         {product.name}
                       </h3>
                     </Link>
-                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
+
+                    {/* Product Description */}
+                    <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed mb-3">
                       {product.description}
                     </p>
 
-                    <div className="flex items-center mb-3 sm:mb-4">
-                      <div className="flex items-center space-x-0.5 sm:space-x-1">
+                    {/* Rating */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-3 w-3 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400"
-                          />
+                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <span className="text-xs sm:text-sm text-gray-600 ml-1 sm:ml-2">(4.8)</span>
+                      <span className="text-sm text-gray-500 font-medium">(4.8)</span>
+                      <span className="text-xs text-green-600 font-semibold bg-green-50 px-2 py-1 rounded-full">Verified</span>
                     </div>
 
-                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <span className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-600">
+                    {/* Price Section */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-2xl font-bold text-orange-600">
                         ₹{product.price}
                       </span>
                       {product.originalPrice && (
-                        <span className="text-sm sm:text-base lg:text-lg text-gray-500 line-through">
+                        <span className="text-base text-gray-500 line-through">
                           ₹{product.originalPrice}
                         </span>
                       )}
+                      <span className="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded-full">
+                        Free Delivery
+                      </span>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                      <Link to={`/product/${product.id}`} className="flex-1">
-                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-medium sm:font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    {/* Action Buttons - Mobile Optimized */}
+                    <div className="space-y-2.5">
+                      <Link to={`/product/${product.id}`} className="block">
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3.5 text-base rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                           👁️ View Details
                         </Button>
                       </Link>
                       <Button
-                        className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium sm:font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3.5 text-base rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                         onClick={(e) => {
                           e.preventDefault();
                           addToCart(product);
@@ -321,22 +334,27 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-600 to-red-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Can't Find What You're Looking For?
+      {/* Call to Action - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
+            🔍 Can't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-            We're always adding new pieces to our collection. Contact us for
-            custom orders or to learn about upcoming arrivals.
+          <p className="text-base sm:text-lg lg:text-xl text-orange-100 mb-6 sm:mb-8 leading-relaxed px-2">
+            🎨 We're always adding new pieces! Contact us for custom orders or upcoming arrivals.
           </p>
           <Link to="/contact">
             <Button
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-50 px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-orange-600 hover:bg-gray-50 px-8 py-4 text-base sm:text-lg font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
             >
-              Contact Us
+              📞 Contact Us
             </Button>
           </Link>
         </div>
