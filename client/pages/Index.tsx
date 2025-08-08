@@ -66,7 +66,7 @@ const featuredProducts: Product[] = [
       "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg",
       "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg"
     ],
-    dimensions: "Height 7cm × Width 0.5cm �� Length 7.5cm",
+    dimensions: "Height 7cm × Width 0.5cm × Length 7.5cm",
     description: "With its raw, tribal charm, Warli patterns narrate stories of community, nature, and rituals using delicate geometric forms — minimal yet deeply expressive.",
   },
   {
@@ -101,7 +101,7 @@ export default function Index() {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1,
       );
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -396,7 +396,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {featuredProducts.map((product) => (
               <div key={product.id} className="group cursor-pointer">
                 <Card className="relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0">
@@ -456,7 +456,7 @@ export default function Index() {
                         </Button>
                       </Link>
                       <Button
-                        className="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-red-600 hover:text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
+                        className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                         onClick={() => addToCart(product)}
                       >
                         🛒 Add to Cart
