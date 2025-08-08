@@ -33,7 +33,9 @@ interface Product {
   price: number;
   originalPrice?: number;
   image: string;
+  images?: string[];
   description: string;
+  dimensions?: string;
 }
 
 interface CartItem extends Product {
@@ -43,31 +45,48 @@ interface CartItem extends Product {
 const featuredProducts: Product[] = [
   {
     id: 1,
-    name: "Handcrafted Ceramic Vase",
-    price: 2499,
-    originalPrice: 3299,
-    image:
-      "https://images.pexels.com/photos/18635393/pexels-photo-18635393.jpeg",
-    description: "Beautiful handcrafted ceramic vase with traditional patterns",
+    name: "Ghada",
+    price: 350,
+    image: "https://i.postimg.cc/ZnB9HTt3/IMG-20250808-WA0017.jpg",
+    images: [
+      "https://i.postimg.cc/ZnB9HTt3/IMG-20250808-WA0017.jpg",
+      "https://i.postimg.cc/FFWw83wN/IMG-20250808-WA0021.jpg",
+      "https://i.postimg.cc/mgQXLHpc/Whats-App-Image-2025-08-08-at-20-14-23-3145543a.jpg"
+    ],
+    dimensions: "Width 1cm × Length 11cm × Height 19cm",
+    description: "Drawing from the charm of traditional Indian pottery, this design uses soft pastel shades and hand-sculpted floral motifs to bring a modern twist to heritage craft. It blends rustic textures with elegant detailing, making each piece a celebration of earthy beauty.",
   },
   {
     id: 2,
-    name: "Artisan Bowl Set",
-    price: 3299,
-    originalPrice: 4199,
-    image:
-      "https://images.pexels.com/photos/18633243/pexels-photo-18633243.jpeg",
-    description: "Set of three beautiful ceramic bowls perfect for serving",
+    name: "Planter",
+    price: 200,
+    image: "https://i.postimg.cc/hj3MybvY/IMG-20250808-WA0022.jpg",
+    images: [
+      "https://i.postimg.cc/hj3MybvY/IMG-20250808-WA0022.jpg",
+      "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg",
+      "https://i.postimg.cc/tgqL8kRR/IMG-20250808-WA0029.jpg"
+    ],
+    dimensions: "Height 7cm × Width 0.5cm �� Length 7.5cm",
+    description: "With its raw, tribal charm, Warli patterns narrate stories of community, nature, and rituals using delicate geometric forms — minimal yet deeply expressive.",
   },
   {
     id: 3,
-    name: "Terracotta Collection",
-    price: 1899,
-    image:
-      "https://images.pexels.com/photos/19884207/pexels-photo-19884207.png",
-    description: "Rustic charm meets contemporary style",
+    name: "Traditional Clay Diya Set",
+    price: 180,
+    image: "https://images.pexels.com/photos/6243345/pexels-photo-6243345.jpeg",
+    images: [
+      "https://images.pexels.com/photos/6243345/pexels-photo-6243345.jpeg",
+      "https://images.pexels.com/photos/6694342/pexels-photo-6694342.jpeg",
+      "https://images.pexels.com/photos/18635393/pexels-photo-18635393.jpeg"
+    ],
+    dimensions: "Height 3cm × Diameter 5cm (Set of 6)",
+    description: "Handcrafted clay diyas that bring the warmth of traditional festivals to your home. Each diya is carefully shaped and finished by skilled artisans, perfect for creating a serene and spiritual ambiance.",
   },
 ];
+
+// Export for use in other components
+export { featuredProducts };
+export type { Product };
 
 export default function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -429,18 +448,18 @@ export default function Index() {
                     </div>
 
                     <div className="flex gap-3">
+                      <Link to={`/product/${product.id}`} className="flex-1">
+                        <Button
+                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        >
+                          👁️ View Details
+                        </Button>
+                      </Link>
                       <Button
-                        className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        className="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-red-600 hover:text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
                         onClick={() => addToCart(product)}
                       >
                         🛒 Add to Cart
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-red-600 hover:text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
-                        onClick={() => handleBuyNow(product)}
-                      >
-                        ⚡ Buy Now
                       </Button>
                     </div>
                   </CardContent>
