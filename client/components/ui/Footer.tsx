@@ -43,6 +43,7 @@ export default function Footer() {
                 <Link
                   to="/"
                   className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Home
                 </Link>
@@ -51,6 +52,7 @@ export default function Footer() {
                 <Link
                   to="/products"
                   className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Our Collection
                 </Link>
@@ -59,6 +61,7 @@ export default function Footer() {
                 <Link
                   to="/about"
                   className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Our Artisans
                 </Link>
@@ -67,6 +70,7 @@ export default function Footer() {
                 <Link
                   to="/contact"
                   className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Contact Us
                 </Link>
