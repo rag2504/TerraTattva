@@ -147,28 +147,28 @@ export default function Products() {
       />
 
       {/* Page Header */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center mb-8">
+          <div className="flex items-center mb-6 sm:mb-8">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="hover:bg-orange-100">
+              <Button variant="ghost" size="sm" className="hover:bg-orange-100 text-sm">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
               </Button>
             </Link>
           </div>
 
-          <div className="text-center mb-16">
-            <Badge className="bg-white/90 text-orange-600 border border-orange-200 px-4 py-2 text-sm font-medium mb-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <Badge className="bg-white/90 text-orange-600 border border-orange-200 px-3 py-2 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               Our Collection
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Handcrafted{" "}
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                 Pottery
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
               Discover our curated selection of authentic handcrafted pottery,
               each piece uniquely beautiful and culturally significant.
             </p>
