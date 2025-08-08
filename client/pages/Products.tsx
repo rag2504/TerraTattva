@@ -151,7 +151,11 @@ export default function Products() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center mb-4 sm:mb-6">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="hover:bg-orange-100 text-sm bg-white/80 backdrop-blur-sm shadow-sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:bg-orange-100 text-sm bg-white/80 backdrop-blur-sm shadow-sm"
+              >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
               </Button>
@@ -169,7 +173,8 @@ export default function Products() {
               </span>
             </h1>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
-              🏺 Discover authentic handcrafted pottery, each piece uniquely beautiful
+              🏺 Discover authentic handcrafted pottery, each piece uniquely
+              beautiful
             </p>
           </div>
         </div>
@@ -183,7 +188,9 @@ export default function Products() {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2.5 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 min-w-[80px] ${
                     selectedCategory === category
@@ -241,11 +248,13 @@ export default function Products() {
                     {/* Discount Badge */}
                     {product.originalPrice && (
                       <Badge className="absolute top-3 left-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold px-3 py-1.5 text-xs rounded-full shadow-lg">
-                        💸 {Math.round(
+                        💸{" "}
+                        {Math.round(
                           ((product.originalPrice - product.price) /
                             product.originalPrice) *
                             100,
-                        )}% OFF
+                        )}
+                        % OFF
                       </Badge>
                     )}
                     {/* Mobile-Friendly Quick View Overlay */}
@@ -270,11 +279,18 @@ export default function Products() {
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          <Star
+                            key={i}
+                            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                          />
                         ))}
                       </div>
-                      <span className="text-sm text-gray-500 font-medium">(4.8)</span>
-                      <span className="text-xs text-green-600 font-semibold bg-green-50 px-2 py-1 rounded-full">Verified</span>
+                      <span className="text-sm text-gray-500 font-medium">
+                        (4.8)
+                      </span>
+                      <span className="text-xs text-green-600 font-semibold bg-green-50 px-2 py-1 rounded-full">
+                        Verified
+                      </span>
                     </div>
 
                     {/* Price Section */}
@@ -348,7 +364,8 @@ export default function Products() {
             🔍 Can't Find What You're Looking For?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed px-2">
-            🎨 We're always adding new pieces! Contact us for custom orders or upcoming arrivals.
+            🎨 We're always adding new pieces! Contact us for custom orders or
+            upcoming arrivals.
           </p>
           <Link to="/contact">
             <Button
