@@ -174,7 +174,7 @@ export default function ProductDetail() {
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
             {/* Product Images */}
             <div className="space-y-4">
               {/* Main Image */}
